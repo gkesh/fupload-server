@@ -1,19 +1,11 @@
 import express from 'express';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-import { authenticate } from './openmrs/session';
 
 const app = express();
-const port = process.env.PORT;
+const port = 5005;
 
 app.get('/', (_, __) => {
     // tslint:disable-next-line:no-console
     console.log("Reportal Started...");
-
-    // tslint:disable-next-line:no-console
-    console.log(authenticate());
 });
 
 app.listen(port, () => {

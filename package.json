@@ -1,7 +1,7 @@
 {
-  "name": "reportal_server",
+  "name": "fupload_server",
   "version": "1.0.0",
-  "description": "Server to download reports from the NepalEHR Server",
+  "description": "",
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gkesh/reportal-server.git"
+    "url": "git+https://github.com/gkesh/fupload-server.git"
   },
   "keywords": [
     "reports",
@@ -24,9 +24,9 @@
   "author": "gkesh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gkesh/reportal-server/issues"
+    "url": "https://github.com/gkesh/fupload-server/issues"
   },
-  "homepage": "https://github.com/gkesh/reportal-server#readme",
+  "homepage": "https://github.com/gkesh/fupload-server#readme",
   "dependencies": {
     "express": "^4.17.3"
   },

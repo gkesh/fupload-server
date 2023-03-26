@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "module": "commonjs",
+        "strict": true,
         "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
         "target": "es6",
         "noImplicitAny": true,
         "moduleResolution": "node",

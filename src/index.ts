@@ -1,14 +1,10 @@
-import express from 'express';
+import express, { Application } from 'express';
+import router from './router';
 
-const app = express();
-const port = 5005;
+const app: Application = router(express());
+const PORT = 8081;
 
-app.get('/', (_, __) => {
+app.listen(PORT, () => {
     // tslint:disable-next-line:no-console
-    console.log("Reportal Started...");
-});
-
-app.listen(port, () => {
-    // tslint:disable-next-line:no-console
-    console.log(`Server started at: localhost:${port}`);
+    console.log(`FUpload server started at: localhost:${PORT}`);
 });

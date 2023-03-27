@@ -1,25 +1,13 @@
 import express, { Application } from "express";
+import middleware from "./middleware";
+import { UPLOAD_DIR } from "./config";
 import router from "./router";
 
-// Middlewares
-import cors from "cors";
-import fileUpload from "express-fileupload";
-import {
-  json as bodyParserJson,
-  urlencoded as bodyParserUrlEncoded,
-} from "body-parser";
-
-const app: Application = router(express());
+const app: Application = router(middleware(express()));
 const PORT = process.env.port || 8081;
 
-app.use(cors());
-app.use(
-  fileUpload({
-    createParentPath: true,
-  })
-);
-app.use(bodyParserJson());
-app.use(bodyParserUrlEncoded({ extended: true }));
+// Make upload folder accessible
+app.use(express.static(UPLOAD_DIR));
 
 app.listen(PORT, () => {
   // tslint:disable-next-line:no-console

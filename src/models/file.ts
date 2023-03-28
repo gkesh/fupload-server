@@ -1,4 +1,4 @@
-export type Extension = 'jpeg' | 'png' | 'mp4' | 'mp3';
+export type Extension = 'jpeg' | 'jpg' | 'png' | 'mp4' | 'mp3';
 
 export interface File {
     title: string;

@@ -14,7 +14,13 @@ const listAll = async (): Promise<File[] | null> => {
 
         files.forEach(file => {
             const [timestamp, ...filename] = file.split("_");
-            const extension = file.split(".").splice(-1)[0] as Extension;
+            let extensionCheck = file.split(".").splice(-1)[0];
+
+            if (!["jpg", "jpeg", "png", "mp3", "mp4"].includes(extensionCheck)) {
+                return;
+            }
+
+            const extension = extensionCheck as Extension;
 
             // Skips invalid extensions and files that dont match naming schemes
             const upload: File = {

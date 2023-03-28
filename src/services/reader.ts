@@ -14,7 +14,7 @@ const listAll = async (): Promise<File[] | null> => {
 
         files.forEach(file => {
             const [timestamp, ...filename] = file.split("_");
-            let extensionCheck = file.split(".").splice(-1)[0];
+            const extensionCheck = file.split(".").splice(-1)[0];
 
             if (!["jpg", "jpeg", "png", "mp3", "mp4"].includes(extensionCheck)) {
                 return;

@@ -1,4 +1,4 @@
-import { Application, Request, Response } from "express";
+import { Application, Request, Response, static as expressStatic } from "express";
 import { count, listAll } from "./services/reader";
 import { createWriteStream } from "fs";
 import { UPLOAD_DIR, VALID_MIMETYPES } from "./config";
@@ -67,6 +67,9 @@ export default (app: Application): Application => {
             res.status(500).send(error);
         }
     });
+
+    // Make upload folder accessible
+    app.use("/uploads", expressStatic(UPLOAD_DIR));
 
     return app;
 }
